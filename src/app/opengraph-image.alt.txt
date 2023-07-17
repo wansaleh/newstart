@@ -1,0 +1,1 @@
+NewStart is a NextJS 13 starter template for me to bootstrap new projects.
