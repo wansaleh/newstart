@@ -1,4 +1,4 @@
-# next-starter
+# NewStart
 
 My go-to starter. With Next.js, Tailwind, Typescript.
 
