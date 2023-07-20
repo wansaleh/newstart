@@ -1,4 +1,4 @@
-import { Manrope as Sans } from 'next/font/google';
+import { Inter as Sans } from 'next/font/google';
 
 import globalMetadata from './metadata';
 import Providers from './providers';

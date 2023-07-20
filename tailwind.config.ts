@@ -24,17 +24,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: [
-          // 'General Sans',
-          // 'area-variable',
-          'var(--font-sans)',
-          ...defaultTheme.fontFamily.sans,
-        ],
-        serif: [
-          'Boska',
-          // 'var(--font-serif)',
-          ...defaultTheme.fontFamily.sans,
-        ],
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        serif: ['Boska', ...defaultTheme.fontFamily.sans],
         wide: ['Panchang', ...defaultTheme.fontFamily.sans],
       },
 
@@ -73,11 +64,6 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
         'accordion-down': {
