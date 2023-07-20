@@ -7,6 +7,7 @@ import './globals.css';
 
 import { cn } from '@/lib/utils';
 import Footer from '@/components/footer';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 export const metadata = globalMetadata;
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Providers>
+        <TailwindIndicator />
       </body>
     </html>
   );
