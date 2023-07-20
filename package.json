@@ -28,6 +28,7 @@
     "react-wrap-balancer": "^1.0.0",
     "server-only": "^0.0.1",
     "sharp": "^0.32.3",
+    "tailwind-merge": "^1.14.0",
     "tailwind-variants": "^0.1.13",
     "zod": "^3.21.4"
   },
