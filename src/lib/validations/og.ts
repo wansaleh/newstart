@@ -1,7 +1,7 @@
-import * as z from 'zod';
+import { enumType, object, string, withDefault } from 'valibot';
 
-export const ogImageSchema = z.object({
-  heading: z.string(),
-  type: z.string(),
-  mode: z.enum(['light', 'dark']).default('dark'),
+export const ogImageSchema = object({
+  heading: string(),
+  type: string(),
+  mode: withDefault(enumType(['light', 'dark']), 'light'),
 });
