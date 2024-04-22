@@ -1,24 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/og';
 import { ImageResponseOptions } from 'next/server';
 
-import { baseUrl } from './config';
+import { siteTitle } from '@/app/metadata';
 
 const loadFont = async (url: URL) =>
 	fetch(new URL(url, import.meta.url)).then((res) => res.arrayBuffer());
 
 export default async function generateOpenGraph({
 	title,
-	nameArabic,
-	imageUrl = `${baseUrl}/images/quran.jpg`,
-	snippet,
+	description,
 	width = 1200,
 	height = 675,
 }: {
 	title: string;
-	nameArabic?: string;
-	imageUrl?: string | null;
-	snippet?: string;
+	description?: string;
 	width?: number;
 	height?: number;
 }) {
@@ -30,19 +25,11 @@ export default async function generateOpenGraph({
 				{
 					name: 'Sans',
 					data: await loadFont(
-						new URL('@/assets/fonts/InterTight-Medium.ttf', import.meta.url)
+						new URL('@/assets/fonts/Geist-Medium.otf', import.meta.url)
 					),
 					style: 'normal',
 					weight: 400,
 				},
-				// {
-				// 	name: 'Quran',
-				// 	data: await loadFont(
-				// 		new URL('@/assets/fonts/Lemonada-Regular.ttf', import.meta.url)
-				// 	),
-				// 	style: 'normal',
-				// 	weight: 500,
-				// },
 			],
 			headers: {
 				'Content-Type': 'image/png',
@@ -51,140 +38,21 @@ export default async function generateOpenGraph({
 		} as ImageResponseOptions;
 
 		const output = (
-			<div
-				style={{
-					position: 'relative',
-					width: '100%',
-					height: '100%',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'flex-end',
-					fontSize: '3rem',
-					fontFamily: 'Sans',
-					color: '#000',
-					background: '#fff',
-				}}
-			>
-				<div
-					style={{
-						display: 'flex',
-						flexDirection: 'column',
-						flex: 1,
-						// width: width / 2,
-						height,
-						padding: '3rem',
-					}}
-				>
-					<div
-						style={{
-							display: 'flex',
-							marginBottom: 'auto',
-							fontSize: '0.5em',
-							fontWeight: 800,
-							lineHeight: 1,
-							whiteSpace: 'pre-wrap',
-							letterSpacing: '-0.025em',
-							// opacity: 0.6,
-							fontFamily: 'Sans',
-							width: '100%',
-						}}
-					>
-						<span
-							style={{
-								padding: '0.3em 0.6em 0.25em',
-								borderRadius: 8,
-								background: '#000',
-								color: '#fff',
-							}}
-						>
-							QuranSaya
-						</span>
-					</div>
-
-					{nameArabic && (
-						<div
-							style={{
-								// position: 'relative',
-								// zIndex: '10',
-								fontSize: '1.5em',
-								fontWeight: 800,
-								lineHeight: 1,
-								whiteSpace: 'pre-wrap',
-								fontFamily: 'Quran',
-								marginBottom: '0.1em',
-								width: '100%',
-								// opacity: 0.9,
-							}}
-						>
-							{nameArabic}
-						</div>
-					)}
-
-					<div
-						style={{
-							// fontFamily: 'Serif',
-							fontWeight: 800,
-							lineHeight: 0.9,
-							whiteSpace: 'pre-wrap',
-							letterSpacing: '-0.025em',
-							marginBottom: 4,
-							width: '100%',
-						}}
-					>
-						{title}
-					</div>
+			<div tw="relative w-full h-full flex items-start p-10 justify-end text-6xl font-sans text-black bg-white tracking-tight flex-col">
+				<div tw="flex mb-auto text-3xl font-bold leading-none tracking-tight">
+					<span tw="px-3 py-2 rounded-xl bg-black text-white">{siteTitle}</span>
 				</div>
 
-				{snippet && !imageUrl && (
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'flex-end',
-							flex: 1,
-							// width: width / 2,
-							height,
-							padding: '3rem',
-							fontFamily: 'Sans',
-							fontSize: '2rem',
-							fontWeight: 400,
-							letterSpacing: '-0.025em',
-							lineHeight: 1,
-							// textAlign: 'justify',
-							color: '#fff',
-							background: '#000',
-						}}
-					>
-						<div
-							style={{
-								fontSize: '70rem',
-								position: 'absolute',
-								top: '-16rem',
-								right: '-7rem',
-								opacity: 0.2,
-							}}
-						>
-							“
-						</div>
+				<div tw="text-7xl font-serif leading-none tracking-tighter">
+					{title}
+				</div>
 
-						{snippet}
+				<div tw="h-1 w-12 bg-black rounded-full mt-10 ml-0.5" />
+
+				{description && (
+					<div tw="text-4xl font-normal max-w-screen-md leading-none tracking-tighter mt-2">
+						{description}
 					</div>
-				)}
-
-				{imageUrl && (
-					<img
-						alt=""
-						src={imageUrl}
-						style={{
-							// position: 'absolute',
-							// inset: 0,
-							// right: 0,
-							width: width / 2,
-							height: height,
-							objectFit: 'cover',
-							objectPosition: 'center',
-						}}
-					/>
 				)}
 			</div>
 		);

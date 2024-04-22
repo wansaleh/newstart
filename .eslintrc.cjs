@@ -3,7 +3,7 @@ module.exports = {
 	$schema: 'https://json.schemastore.org/eslintrc',
 
 	root: true,
-	plugins: ['tailwindcss', 'unused-imports', 'next-on-pages'],
+	plugins: ['tailwindcss', 'unused-imports'],
 	extends: [
 		// 'eslint:recommended',
 		// 'plugin:@typescript-eslint/recommended',

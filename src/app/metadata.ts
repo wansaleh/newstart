@@ -6,53 +6,12 @@ export const siteTitle = 'NewStart';
 export const siteDescription =
 	'NewStart is a Next.js starter kit with TypeScript, TailwindCSS, and more.';
 
-const siteImage = `${baseUrl}/opengraph`;
-
-export const openGraphMetadata = ({
-	title = siteTitle,
-	description = siteDescription,
-	imageUrl = siteImage,
-}: {
-	title?: string;
-	description?: string;
-	imageUrl?: string;
-} = {}) => ({
-	title,
-	description,
-	type: 'website',
-	url: baseUrl,
-	images: [
-		{
-			url: imageUrl,
-			width: 1200,
-			height: 675,
-			alt: siteTitle,
-			type: 'image/png',
-		},
-	],
-});
-export const twitterMetadata = ({
-	title = siteTitle,
-	description = siteDescription,
-	imageUrl = siteImage,
-}: {
-	title?: string;
-	description?: string;
-	imageUrl?: string;
-} = {}) => ({
-	card: 'summary_large_image',
-	title,
-	description,
-	creator: '@wansaleh',
-	images: [imageUrl],
-});
-
 const metadata: Metadata = {
 	metadataBase: new URL(baseUrl),
 
 	title: {
 		default: siteTitle,
-		template: 'QuranSaya — %s',
+		template: `${siteTitle} — %s`,
 	},
 	robots: {
 		index: true,
@@ -70,9 +29,6 @@ const metadata: Metadata = {
 			url: 'https://wansaleh.com',
 		},
 	],
-
-	openGraph: openGraphMetadata(),
-	twitter: twitterMetadata(),
 };
 
 export default metadata;
