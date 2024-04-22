@@ -64,10 +64,6 @@ const metadata: Metadata = {
 		{ media: '(prefers-color-scheme: light)', url: '/icon-dark.svg' },
 		{ media: '(prefers-color-scheme: dark)', url: '/icon-light.svg' },
 	],
-	// icons: [
-	// 	{ media: '(prefers-color-scheme: light)', url: '/icon-dark.svg' },
-	// 	{ media: '(prefers-color-scheme: dark)', url: '/icon-light.svg' },
-	// ],
 	authors: [
 		{
 			name: 'Wan Saleh',

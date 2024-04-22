@@ -3,14 +3,15 @@ module.exports = {
 	$schema: 'https://json.schemastore.org/eslintrc',
 
 	root: true,
+	plugins: ['tailwindcss', 'unused-imports', 'next-on-pages'],
 	extends: [
 		// 'eslint:recommended',
 		// 'plugin:@typescript-eslint/recommended',
 		'next/core-web-vitals',
 		'prettier',
 		'plugin:tailwindcss/recommended',
+		// 'plugin:next-on-pages/recommended',
 	],
-	plugins: ['tailwindcss', 'unused-imports', '@tanstack/query'],
 	rules: {
 		'no-console': 'warn',
 		'sort-imports': 'off',
@@ -36,8 +37,8 @@ module.exports = {
 				argsIgnorePattern: '^_',
 			},
 		],
-		'@tanstack/query/exhaustive-deps': 'error',
 		'@typescript-eslint/no-explicit-any': 'off',
+		// 'next-on-pages/no-unsupported-configs': 'warn',
 	},
 	settings: {
 		tailwindcss: {
