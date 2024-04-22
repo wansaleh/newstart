@@ -10,6 +10,7 @@ export const contentType = 'image/png';
 
 export default async function OG() {
 	return generateOpenGraph({
-		title: siteDescription,
+		title: siteTitle,
+		description: siteDescription,
 	});
 }
