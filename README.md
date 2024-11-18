@@ -1,6 +1,6 @@
 # NewStart
 
-My go-to starter. With Next.js, Tailwind, Typescript.
+My go-to starter. With Next.js 15 (React 19), Tailwind, Typescript, ESLint 9.
 
 ## Installation & Usage
 
