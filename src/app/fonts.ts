@@ -1,22 +1,19 @@
 import {
-	// Montserrat as Brand,
 	DM_Serif_Display as Heading,
-	// Manrope as Sans,
-	// Rethink_Sans as Sans,
+	Geist as Sans,
 	Fraunces as Serif,
 } from 'next/font/google';
-import { GeistSans } from 'geist/font/sans';
 
 import { cn } from '@/lib/utils';
 
-// const fontSans = Sans({
-// 	preload: true,
-// 	subsets: ['latin'],
-// 	display: 'swap',
-// 	variable: '--font-sans',
-// 	fallback: ['system-ui'],
-// 	// weight: ['300', '400', '500', '700', '800'],
-// });
+const fontSans = Sans({
+	preload: true,
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-sans',
+	fallback: ['system-ui'],
+	weight: 'variable',
+});
 const fontHeading = Heading({
 	preload: true,
 	subsets: ['latin'],
@@ -37,8 +34,7 @@ const fontSerif = Serif({
 });
 
 const fontClassNames = cn(
-	GeistSans.variable,
-	// fontSans.variable,
+	fontSans.variable,
 	fontHeading.variable,
 	fontSerif.variable
 );
