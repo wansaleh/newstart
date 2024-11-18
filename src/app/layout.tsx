@@ -25,10 +25,6 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={fontClassNames} suppressHydrationWarning>
-			<head>
-				<link rel="preconnect" href="https://rsms.me/" />
-				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-			</head>
 			<body>
 				<Providers>
 					<main>{children}</main>

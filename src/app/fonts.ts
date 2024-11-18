@@ -1,6 +1,7 @@
 import {
 	DM_Serif_Display as Heading,
-	Geist as Sans,
+	Inter as Sans,
+	// Geist as Sans,
 	Fraunces as Serif,
 } from 'next/font/google';
 
